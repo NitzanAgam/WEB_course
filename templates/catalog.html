@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+    {% set page_name= 'Catalog page' %}
+    {% include('menu.html') %}
+
+    <h2 class = "{% if color =='green' %}green{% else %}yellow{% endif %}">Catalog List</h2>
+    {% block tohen %}
+    <form action="/catalog" method="GET">
+        Product: <input name="product" type="text">
+        Size: <input name="size" type="text">
+        <input type="submit">
+    </form>
+        {% if p_name %}
+            <h3>You picked product:{{ p_name }}</h3>
+        {% endif %}
+        {% if p_size %}
+            <h3>You picked Size: {{ p_size }}</h3>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+ <header>
+     <a href="/">Home</a> | <a href="/about">About</a> | <a href="/catalog">Catalog</a> |
+     {% if session.username %}
+        <a href="/logout">Logout</a>
+     {% else %}
+        <a href="/assignment9">Login</a>
+     {% endif %}
+ </header>
+{% if session.LoggedIn %}
+    <h2> Welcome back, {{ session.get('username') }} ! You've been able to Login</h2>
+{% else %}
+    <h2>Hey, You !</h2>
+{% endif %}
+ <h3>Welcome to {{ page_name }}</h3>
